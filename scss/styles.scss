@@ -1,0 +1,77 @@
+
+// Step 1: import colors.scss
+@import "colors.scss";
+
+// Step 2: fill in the colors
+// Global
+* {
+    color: $textColor;
+    font-size: 1.2rem;
+}
+
+
+@mixin textBox {
+    max-width: 50%;  // Limit width to 50%
+    word-wrap: break-word;  // Break long words
+    text-align: center;
+}
+
+.container {
+    background-color: $bgColor;
+    border: 1px solid #000;
+    display: flex;
+    height: 500px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1em;
+    width: 50%;
+
+    .left {
+        background-color: $leftColor;
+        height: 100%;
+        width: 69%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        p {
+            @include textBox;  // use the mixin
+        }
+    }
+
+    .right {
+        background-color: $rightColor;
+        height: 100%;
+        position: relative;
+        width: 29%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        p {
+            @include textBox;  // use the mixin
+        }
+
+        .button {
+            background-color: $btnColor;
+            color: $btnTextColor;
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 7em;
+            height: 2.5em;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 0.5em 2em;
+
+            //this is to center content vertically
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -120%);
+        }
+    }
+
+}
